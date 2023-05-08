@@ -1,0 +1,15 @@
+#### Folders #####
+.allure/
+.gradle/
+build/
+.idea/
+target/
+out/
+report/
+logs/
+
+#### Files #####
+!gradle-wrapper.jar
+.DS_Store
+*.iml
+.project

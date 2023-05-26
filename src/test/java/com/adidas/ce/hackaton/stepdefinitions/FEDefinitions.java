@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import java.util.UUID;
+
 public class FEDefinitions {
 
   private WebDriver driver;
@@ -31,9 +33,9 @@ public class FEDefinitions {
   @When("the librarian add an author with name {string}")
   public void theLibrarianAddAnAuthorWithName(String name) {
     //homepage
-    this.name = name;
+    this.name = String.format("%s_%s", name, UUID.randomUUID());
     driver.findElement(By.cssSelector("#menu-create-list-author > a")).click();
-    driver.findElement(By.id("authorname")).sendKeys(name);
+    driver.findElement(By.id("authorname")).sendKeys(this.name);
     driver.findElement(By.id("createauthorbutton")).click();
   }
 
